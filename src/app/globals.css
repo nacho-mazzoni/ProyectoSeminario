@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+/* Ocultar botones de desarrollo de Next.js */
+#__next-dev-ui,
+.__next-dev-ui,
+[id*="next-dev"],
+[class*="next-dev"],
+button[aria-label*="next"],
+button[title*="next"],
+.next-dev-overlay,
+[data-nextjs-dev-overlay] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+/* Ocultar cualquier elemento con la letra N en la esquina */
+div[style*="position: fixed"][style*="left: 20px"][style*="bottom: 20px"],
+div[style*="position: fixed"][style*="left: 10px"][style*="bottom: 10px"],
+button[style*="position: fixed"][style*="left"],
+button[style*="position: fixed"][style*="bottom"] {
+  display: none !important;
+}
+
+/* Asegurar que el body ocupe toda la pantalla */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Layout principal */
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Prevenir que elementos se salgan del viewport */
+* {
+  box-sizing: border-box;
+}
+
+/* Ocultar elementos de desarrollo que aparezcan */
+[data-overlay],
+[data-nextjs-overlay],
+.__next {
+  position: relative;
+}
+
+/* Estilos para el footer */
+footer {
+  margin-top: auto;
+}
+
+/* Scrollbar personalizado */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #4a5568;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2d3748;
+}
